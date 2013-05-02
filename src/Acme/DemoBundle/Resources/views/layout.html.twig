@@ -1,0 +1,40 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+  ESPRIT - {{ parent() }}
+{% endblock %}
+{% block body %}
+  {# On définit un sous-titre commun à toutes les pages du bundle,
+par exemple #}
+  
+       
+  <ul class="thumbnails">
+      {% for entity in entities %}
+      <li class="span4">
+          <div class="thumbnail" style="width: 300px;height: 230px;">
+
+             <h3>{{ entity.nom }}</h3>
+              <p>{{ entity.desc }}
+                  <a class="btn btn-small btn-primary disabled" href="{{ path('news_show', { 'id': entity.id }) }}">Lire</a>
+                   {% if is_granted('ROLE_COMMUNICATION') %}
+                  <a class="btn btn-small btn-primary disabled" href="{{ path('news_edit', { 'id': entity.id }) }}">Modifier</a>
+                   {% endif %}
+              </p>
+          </div>
+      </li>
+        {% endfor %}
+      </ul>
+      {% if pagerfanta.haveToPaginate %}
+       {{ pagerfanta(pagerfanta, 'twitter_bootstrap_translated') }}
+    {% endif %}   
+ 
+  <hr>
+  {# On définit un nouveau block, que les vues du bundle pourront
+remplir #}
+  {% block sdzblog_body %}
+  {% endblock %}
+{% endblock %}
+
+
+
+
+

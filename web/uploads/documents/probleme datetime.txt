@@ -1,0 +1,21 @@
+//app/config/config.yml 
+
+services:
+    my.listener:
+        class: Doctrine\DBAL\Event\Listeners\OracleSessionInit 
+        tags:
+            - { name: doctrine.event_listener, event: postConnect }
+
+**************************************************************************************************************************
+
+installation du bundle FOSUser: il faut ajouter ces deux lignes dans appkernel.php aprés l'installation du bundle
+
+new Sdz\UserBundle\SdzUserBundle(),
+new FOS\UserBundle\FOSUserBundle(), 
+***********************************************************************************************************
+
+bundles pagination
+"white-october/pagerfanta-bundle": "dev-master",
+        "pagerfanta/pagerfanta": "dev-master",
+
+**************************************************************************************************************

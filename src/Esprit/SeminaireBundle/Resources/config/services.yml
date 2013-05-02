@@ -1,0 +1,7 @@
+parameters:
+#    esprit_seminaire.example.class: Esprit\SeminaireBundle\Example
+
+services:
+#    esprit_seminaire.example:
+#        class: %esprit_seminaire.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

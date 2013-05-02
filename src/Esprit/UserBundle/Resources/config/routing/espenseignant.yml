@@ -1,0 +1,30 @@
+espenseignant:
+    pattern:  /
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:index" }
+
+espenseignant_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:show" }
+
+espenseignant_new:
+    pattern:  /new
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:new" }
+
+espenseignant_create:
+    pattern:  /create
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:create" }
+    requirements: { _method: post }
+
+espenseignant_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:edit" }
+
+espenseignant_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:update" }
+    requirements: { _method: post|put }
+
+espenseignant_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritUserBundle:EspEnseignant:delete" }
+    requirements: { _method: post|delete }

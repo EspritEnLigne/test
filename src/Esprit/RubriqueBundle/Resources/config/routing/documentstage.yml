@@ -1,0 +1,33 @@
+documentstage:
+    pattern:  /
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:index" }
+
+documentstage_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:show" }
+
+documentstage_new:
+    pattern:  /new
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:new" }
+
+documentstage_create:
+    pattern:  /create
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:create" }
+    requirements: { _method: post }
+
+documentstage_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:edit" }
+
+documentstage_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:update" }
+    requirements: { _method: post|put }
+
+documentstage_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:delete" }
+#    requirements: { _method: post|delete }
+documentstage_download:
+    pattern: /{path}/download
+    defaults: { _controller: "EspritRubriqueBundle:DocumentStage:file" }

@@ -1,0 +1,24 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <table class="table table-striped">
+ 
+<tr>
+    <td>Note de tp</td>
+                        <td>Note de CC</td>
+                        <td>Note d'examen</td>
+                        <td>Nom de matiere</td>
+                    </tr></br>
+{% for entity in result  %}
+<tr>
+    <td>{{ entity.TP }}</td>
+                        <td>{{ entity.CC }}</td>
+                        <td>{{ entity.EX }}</td>
+                        <td>{{ entity.MATIERE }}</td>
+                    </tr></br>
+
+ 
+{% endfor %}
+                    </table>
+{% endblock %}

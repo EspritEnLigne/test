@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+
+    {% endblock %}
+{% block body -%}
+          <div style="margin-top: 100px;">
+            
+               
+            
+           
+            <div style="margin-top: 20px;margin-left: 20px;margin-right: 20px;">
+                <h1> {{ entity.nom }}</h1>
+                <pre> <h4> <p class="text-info">  {{ entity.article }} </p></h4></pre></div>
+          </div>
+
+        <ul class="record_actions">
+            
+     <div class="form-actions">
+            <button type="submit" class="btn" onclick="self.location.href='{{ path('news')}}'">Back to the list</button>
+            {% if is_granted('ROLE_COMMUNICATION') %}
+            <button type="submit" class="btn btn-success" onclick="self.location.href='{{ path('news_edit', { 'id': entity.id }) }}'">Edit</button>
+            {% endif %}
+             {% if is_granted('ROLE_COMMUNICATION') %}
+        <form action="{{ path('news_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        {% endif%}
+    
+   </div>
+               
+</ul>
+{% endblock %}
+{% block javascripts %}
+    {# Ajoutez ces javascripts si vous comptez vous servir des
+fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+ <script>
+$(function() {
+$( "#esprit_userbundle_newstype_newsDate" ).datepicker();
+});
+</script>
+  {% endblock %}

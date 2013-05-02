@@ -1,0 +1,10 @@
+<center>
+<form  class="form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" >
+     
+ {{ form_widget(form) }}
+          
+    
+        <input class="btn btn-primary" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    
+</form>
+    </center>

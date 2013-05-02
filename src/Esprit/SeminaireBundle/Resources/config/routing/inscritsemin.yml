@@ -1,0 +1,30 @@
+inscritsemin:
+    pattern:  /
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:index" }
+
+inscritsemin_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:show" }
+
+inscritsemin_new:
+    pattern:  /new
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:new" }
+
+inscritsemin_create:
+    pattern:  /create
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:create" }
+    requirements: { _method: post }
+
+inscritsemin_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:edit" }
+
+inscritsemin_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:update" }
+    requirements: { _method: post|put }
+
+inscritsemin_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritSeminaireBundle:InscritSemin:delete" }
+    requirements: { _method: post|delete }

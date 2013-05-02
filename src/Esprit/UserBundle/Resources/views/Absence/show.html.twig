@@ -1,0 +1,25 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Absence</h1>
+
+<table class="table table-striped">
+ 
+<tr>
+    
+    <th>Date d'absence</th>
+                        <th>Heure d'absence</th>
+                        <th>Matiere</th>
+                        <th>Enseignant</th>
+                    </tr>
+{% for entity in result  %}
+<tr>
+    <td>{{ entity.DATEABSENCE|date('Y-m-d') }}</td>
+                        <td>{{ entity.HEUREABSENCE|date('H:i:s') }}</td>
+                        <td>{{ entity.MATIERE }}</td>
+                        <td>{{ entity.ENSEIGNANT }}</td>
+                    </tr></br>
+
+ 
+{% endfor %}
+                    </table>{% endblock %}

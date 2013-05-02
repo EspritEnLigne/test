@@ -1,0 +1,34 @@
+rubrique:
+    pattern:  /
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:index" }
+
+rubrique_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:show" }
+
+rubrique_showMenu:
+    pattern:  /{id}/showMenu
+    defaults: { _controller: "AcmeDemoBundle:Demo:showMenu" }
+
+rubrique_new:
+    pattern:  /new
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:new" }
+
+rubrique_create:
+    pattern:  /create
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:create" }
+    requirements: { _method: post }
+
+rubrique_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:edit" }
+
+rubrique_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:update" }
+    requirements: { _method: post|put }
+
+rubrique_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+seminaire:
+    pattern:  /
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:index" }
+
+seminaire_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:show" }
+
+seminaire_new:
+    pattern:  /new
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:new" }
+
+seminaire_create:
+    pattern:  /create
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:create" }
+    requirements: { _method: post }
+
+seminaire_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:edit" }
+
+seminaire_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:update" }
+    requirements: { _method: post|put }
+
+seminaire_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritSeminaireBundle:Seminaire:delete" }
+    requirements: { _method: post|delete }

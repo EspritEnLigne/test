@@ -1,0 +1,9 @@
+esprit_seminaire_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: EspritSeminaireBundle:Default:index }
+EspritSeminaireBundle_inscritsemin:
+    resource: "@EspritSeminaireBundle/Resources/config/routing/inscritsemin.yml"
+    prefix:   /inscritsemin
+EspritSeminaireBundle_seminaire:
+    resource: "@EspritSeminaireBundle/Resources/config/routing/seminaire.yml"
+    prefix:   /seminaire

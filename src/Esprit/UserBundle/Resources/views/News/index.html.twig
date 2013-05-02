@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+            <div style="margin-top: 100px;">
+        {% for entity  in entities%}
+  <ul class="thumbnails">      
+      <li class="span4">
+          <div class="thumbnail" style="width:  1000px;height: 120px;">
+
+              <h3>{{ entity.nom }}</h3>
+              <p>{{ entity.desc }}
+                  {{ entity.newsDate|date("m/d/Y")  }}
+                  <a class="btn btn-small btn-primary disabled" href="{{ path('news_show', { 'id': entity.id }) }}">Lire</a>
+                   {% if is_granted('ROLE_COMMUNICATION') %}
+                  <a class="btn btn-small btn-primary disabled" href="{{ path('news_edit', { 'id': entity.id }) }}">Modifier</a>
+                   {% endif %}
+              </p>
+          </div>
+      </li>
+        </ul>
+           
+           
+        {% endfor %}
+    {% if pagerfanta.haveToPaginate %}
+       {{ pagerfanta(pagerfanta, 'twitter_bootstrap_translated') }}
+    {% endif %}
+      </div>
+    {% endblock %}
+    
+{#
+
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>News list</h1>
+
+    <table class="records_list">
+        
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.newsDate %}{{ entity.newsDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.article }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('news_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('news_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       
+    {% endblock %#}

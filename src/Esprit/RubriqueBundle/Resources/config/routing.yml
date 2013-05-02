@@ -1,0 +1,15 @@
+esprit_rubrique_homepage:
+    pattern:  /
+    defaults: { _controller: "EspritRubriqueBundle:Rubrique:index" }
+EspritRubriqueBundle_rubrique:
+    resource: "@EspritRubriqueBundle/Resources/config/routing/rubrique.yml"
+    prefix:   /rubrique
+EspritRubriqueBundle_document:
+    resource: "@EspritRubriqueBundle/Resources/config/routing/document.yml"
+    prefix:   /document
+EspritRubriqueBundle_documentstage:
+    resource: "@EspritRubriqueBundle/Resources/config/routing/documentstage.yml"
+    prefix:   /documentstage
+EspritRubriqueBundle_rubriquestage:
+    resource: "@EspritRubriqueBundle/Resources/config/routing/rubriquestage.yml"
+    prefix:   /rubriquestage

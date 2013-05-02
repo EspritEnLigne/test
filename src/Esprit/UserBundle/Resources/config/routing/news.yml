@@ -1,0 +1,39 @@
+news:
+    pattern:  /{page}
+    defaults: { _controller: "EspritUserBundle:News:index",page:1 }
+    requirements:
+        page:  \d+
+news_liste:
+    pattern:  /list/{page}
+    defaults: { _controller: "EspritUserBundle:News:list", page:1 }
+    requirements:
+        page:  \d+
+news_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritUserBundle:News:show" }
+
+news_new:
+    pattern:  /new
+    defaults: { _controller: "EspritUserBundle:News:new" }
+
+news_create:
+    pattern:  /create
+    defaults: { _controller: "EspritUserBundle:News:create" }
+    requirements: { _method: post }
+
+news_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritUserBundle:News:edit" }
+
+news_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritUserBundle:News:update" }
+    requirements: { _method: post|put }
+
+   
+   
+
+news_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritUserBundle:News:delete" }
+    requirements: { _method: post|delete }

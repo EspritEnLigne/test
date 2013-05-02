@@ -1,0 +1,89 @@
+<ul class="nav">
+    <li class="active"><a href="{{ path('news') }}">Acceil</a></li>
+    <li><a href="#">Inscription</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false">
+            Scolarite <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+        {% for entity in rubriques %}
+                <li><a tabindex="-1" href="{{ path('rubrique_showMenu', { 'id': entity.id }) }}">{{ entity.titre }}</a></li>
+        {% endfor %}
+                
+                {% if is_granted('ROLE_SCOL') %}
+                <li class="divider"></li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="{{ path('rubrique') }}">Gestion des rubriques</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('rubrique_new') }}">Ajouter rubrique</a></li>
+                        <li><a href="{{ path('document') }}">Gestion des documents</a></li>
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </li>
+
+        <li><a href="#">Plateforme E-Learning</a>
+
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false">
+                Stages et Projets <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+        {% for entity in rubriqueStage %}
+                    <li><a tabindex="-1" href="{{ path('rubriquestage_showMenuStage', { 'id': entity.id }) }}">{{ entity.titre }}</a></li>
+        {% endfor %}
+                    {% if is_granted('ROLE_STAGE') %}
+                    <li class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ path('rubriquestage') }}">Gestion des rubriques</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('rubriquestage_new') }}">Ajouter rubrique</a></li>
+                            <li><a href="{{ path('documentstage') }}">Gestion des documents</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+            </li>
+
+            <li><a href="#">Réglement intérieur</a></li>
+            <li><a href="#">Contact</a></li>
+           
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false">
+                        Bienvenue {{ app.user.username }}<b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                     {#   <li><a tabindex="-1" href="#">Connecté en tant que {{ app.user.username }} </a></li>#}
+                        
+                        {% if is_granted('ROLE_ETUDIANT') %}
+                        <li><a tabindex="-1" href="{{ path('espnote_show') }}">Voir mes notes</a></li>
+                        <li><a tabindex="-1" href="{{ path('absence_show') }}">Voir mes absences</a></li>
+                        <li class="divider"></li>
+                        {% endif  %}
+                        {% if is_granted('ROLE_COMMUNICATION') %}
+                        <li><a tabindex="-1" href="{{ path('news_new') }}">Ajouter un article</a></li>
+                        <li class="divider"></li>
+                        {% endif  %}
+                        
+                        <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                    </ul>
+                </li>
+                   
+             {#       <a href="#"> Connecté en tant que {{ app.user.username }} </a> </li>
+              
+                <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>#}
+                            {% else %}
+                <li>       
+                        {% include "FOSUserBundle:Security:login.html.twig" %}
+                     {#  <a href="{{ path('fos_user_security_login') }}">Connexion</a>#}
+                         {#{ render(controller('FOSUserBundle:Security:Login'))}#}
+                            {% endif %}
+                 </li> 
+                 
+                    
+                </ul>

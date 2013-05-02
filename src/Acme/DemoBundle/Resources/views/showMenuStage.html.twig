@@ -1,0 +1,45 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+
+    <table class="table table-bordered table-striped table-condensed table-hover" style="width: 80%; margin-left: 10%;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Path</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in documentsStage %}
+            <tr>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.path }}</td>
+                <td>
+                 <ul>
+                     {% if is_granted('ROLE_STAGE') %}
+                    <li>
+                        <a class="icon-remove" href="{{ path('documentstage_delete', { 'id': entity.id }) }}"></a>
+                    </li>
+                    <li>
+                        <a class="icon-pencil" href="{{ path('documentstage_edit', { 'id': entity.id }) }}"></a>
+                    </li>
+                    {% endif %}
+                    <li><a class="icon-download-alt" href="{{ path('documentstage_download', { 'path': entity.path }) }}"></a></li>
+                    <li><a class="embed" href="#" onclick="Popup=window.open('../../../../../web/uploads/documents/{{ entity.path }}','Popup','toolbar=yes, location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=420,height=400,left=430,top=23')">read</a></li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <div id="somediv"></div>
+    </table>
+
+<script type="text/javascript">
+    //$.noConflict();
+jQuery(document).ready(function($){
+function openDialog(url) {
+       jQuery("#somediv").load(url).dialog({modal: true});
+    }
+    });
+</script>
+    {% endblock %}

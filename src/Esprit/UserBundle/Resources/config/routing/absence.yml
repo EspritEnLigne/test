@@ -1,0 +1,30 @@
+absence:
+    pattern:  /
+    defaults: { _controller: "EspritUserBundle:Absence:index" }
+
+absence_show:
+    pattern:  /show
+    defaults: { _controller: "EspritUserBundle:Absence:show" }
+
+absence_new:
+    pattern:  /new
+    defaults: { _controller: "EspritUserBundle:Absence:new" }
+
+absence_create:
+    pattern:  /create
+    defaults: { _controller: "EspritUserBundle:Absence:create" }
+    requirements: { _method: post }
+
+absence_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritUserBundle:Absence:edit" }
+
+absence_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritUserBundle:Absence:update" }
+    requirements: { _method: post|put }
+
+absence_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritUserBundle:Absence:delete" }
+    requirements: { _method: post|delete }

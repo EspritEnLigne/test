@@ -1,0 +1,87 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+{% if error %}
+<div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+<form  style="top: 50%;left: 50%;margin-top: 5px;margin-left: 10px;"class="form-inline" action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="text" class="input-small" id="username" placeholder="Username" value="{{ last_username }}" required="required" name="_username">
+    <input type="password" class="input-small" id="password" placeholder="Password" required="required" name="_password">
+    <label class="checkbox">
+    {#    <input type="checkbox"> {{ 'Remember me'|trans({}, 'FOSUserBundle') }}#}
+    </label>
+    <button style="top: 50%;left: 50%;margin-top: 2px;margin-left: 10px;" type="submit" class="btn">Sign in</button>
+</form>
+{#% include "ApplicationSonataUserBundle:Security:login_content.html.twig" %#}
+{#<form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Username</label>
+        <div class="controls">
+            <input type="text" id="username" placeholder="Username" value="{{ last_username }}" required="required" name="_username">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputPassword">Password</label>
+        <div class="controls">
+            <input type="password" id="password" placeholder="Password" required="required" name="_password" >
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox"> {{ 'Remember me'|trans({}, 'FOSUserBundle') }}
+            </label>
+            <button type="submit" class="btn" value="Login">Sign in</button>
+        </div>
+    </div>
+</form>
+{#
+*************************************************************************************
+<form class="box login" action="{{ path("fos_user_security_check") }}" method="post">
+	<fieldset class="boxBody">
+	  <label>Username</label>
+               <input type="text" tabindex="1" id="username"  placeholder="PremiumPixel"  name="_username" value="{{ last_username }}" required="required" />
+   
+	  <label>Password</label>
+          <input type="password" tabindex="2" id="password" name="_password" required="required" />
+
+	</fieldset>
+	<footer>
+         
+
+	  <label><input type="checkbox" tabindex="3">{{ 'Remember me'|trans({}, 'FOSUserBundle') }}</label>
+	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
+	</footer>
+</form> #}
+
+
+{#<form  class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
+    <fieldset>
+   <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+   
+    <div class="control-group">
+    <label class="control-label"  for="username">Login</label>
+    <div class="controls">
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </div>
+    </div>
+   <div class="control-group">
+    <label class="control-label"  for="inputPassword" >Password</label>
+    <div class="controls">
+    <input type="password" id="password" name="_password" required="required" />
+</div>
+    </div>
+    <div class="control-group">
+<div class="controls">
+    <label class="checkbox" for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+  <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+  
+
+</div></div>
+   
+    <input type="submit" class="btn" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
+</fieldset>
+</form> #}
+       
+{% endblock fos_user_content %}

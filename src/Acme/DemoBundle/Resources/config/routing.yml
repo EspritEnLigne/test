@@ -1,0 +1,13 @@
+sdzblog_accueil:
+    pattern:   /{page}
+    defaults:  { _controller: AcmeDemoBundle:Demo:index ,page:1}
+    requirements:
+        page:  \d+
+etudiant_eol:
+    pattern:   /etudiant
+    defaults:  { _controller: AcmeDemoBundle:Demo:contact }
+admin_eol:
+    pattern:   /admin
+    defaults:  { _controller: AcmeDemoBundle:Demo:index }
+  
+  

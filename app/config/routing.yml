@@ -1,0 +1,61 @@
+esprit_seminaire:
+    resource: "@EspritSeminaireBundle/Resources/config/routing.yml"
+    prefix:   /
+esprit_rubrique:
+    resource: "@EspritRubriqueBundle/Resources/config/routing.yml"
+    prefix:   /scolarite
+# app/config/routing.yml
+EspEspritUser_enseignant:
+    resource: "@EspritUserBundle/Resources/config/routing/espenseignant.yml"
+    prefix:   /espenseigant
+    
+EspEspritUser_etudiant:
+    resource: "@EspritUserBundle/Resources/config/routing/espetudiant.yml"
+    prefix:   /espetudiant
+
+EspritUser_absence:
+    resource: "@EspritUserBundle/Resources/config/routing/absence.yml"
+    prefix:   /absence
+
+EspritUser_ensnotee:
+    resource: "@EspritUserBundle/Resources/config/routing/espnote.yml"
+    prefix:   /espnote
+EspritUser_ensnewss:
+    resource: "@EspritUserBundle/Resources/config/routing/news.yml"
+    prefix:   /news
+soanata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+ 
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+ 
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+    
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
+
+esprit_eol:
+    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /change-password
+

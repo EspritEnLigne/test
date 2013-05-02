@@ -1,0 +1,18 @@
+esprit_user_etudiant:
+    resource: "@EspritUserBundle/Resources/config/routing/etudiant.yml"
+    prefix:   /etudiant
+EspritUser_etudiant:
+    resource: "@EspritUserBundle/Resources/config/routing/espetudiant.yml"
+    prefix:   /
+EspritUser_enseignant:
+    resource: "@EspritUserBundle/Resources/config/routing/espetudiant.yml"
+    prefix:   /
+EspritUser_ensnote:
+    resource: "@EspritUserBundle/Resources/config/routing/espnote.yml"
+    prefix:   /
+EspritUser_ensnews:
+    resource: "@EspritUserBundle/Resources/config/routing/news.yml"
+    prefix:   /
+EspritUserBundle_absence:
+    resource: "@EspritUserBundle/Resources/config/routing/absence.yml"
+    prefix:   /

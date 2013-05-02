@@ -1,0 +1,30 @@
+espetudiant:
+    pattern:  /
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:index" }
+
+espetudiant_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:show" }
+
+espetudiant_new:
+    pattern:  /new
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:new" }
+
+espetudiant_create:
+    pattern:  /create
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:create" }
+    requirements: { _method: post }
+
+espetudiant_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:edit" }
+
+espetudiant_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:update" }
+    requirements: { _method: post|put }
+
+espetudiant_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritUserBundle:EspEtudiant:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+espnote:
+    pattern:  /
+    defaults: { _controller: "EspritUserBundle:EspNote:index" }
+
+espnote_show:
+    pattern:  /show
+    defaults: { _controller: "EspritUserBundle:EspNote:show" }
+
+espnote_new:
+    pattern:  /new
+    defaults: { _controller: "EspritUserBundle:EspNote:new" }
+
+espnote_create:
+    pattern:  /create
+    defaults: { _controller: "EspritUserBundle:EspNote:create" }
+    requirements: { _method: post }
+
+espnote_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EspritUserBundle:EspNote:edit" }
+
+espnote_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EspritUserBundle:EspNote:update" }
+    requirements: { _method: post|put }
+
+espnote_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EspritUserBundle:EspNote:delete" }
+    requirements: { _method: post|delete }
